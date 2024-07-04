@@ -40,8 +40,3 @@ const onClickGetUserInputAndCreateGrid = () => {
 
     createGridOfNSize(noOfSquares);
 }
-
-// const gridContainer = document.querySelector('div.square');
-// gridContainer.addEventListener('mouseleave', (e) => {
-//     console.log('Vale: ',e.target.id);
-// })
