@@ -1,4 +1,44 @@
+/**** Styles ****/
+
+/* Init */
 * {
     margin: 0;
     padding: 0;
+}
+
+html, body, div.squares {
+    height: 100%;
+}
+
+body {
+    background-color: cornsilk;
+    font-family: monospace;
+}
+
+button {
+    padding: 16px 48px;
+    background-color: cornsilk;
+    border-radius: 50%;
+    margin: 10px 0;
+}
+
+div.container {
+    margin-bottom: 10px;
+    border: 1px solid black;
+    height: 100%;
+    aspect-ratio: 1;
+}
+
+div.squares {
+    margin-bottom: 10px;
+    border: 1px solid black;
+    height: 100%;
+    aspect-ratio: 1;
+}
+
+/**** Flex ****/
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
