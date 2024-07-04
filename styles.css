@@ -39,7 +39,7 @@ div.squares, div.square {
     border: 1px solid black;
 }
 
-div:hover {
+div.square:hover {
     background-color: burlywood;
 }
 
