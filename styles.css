@@ -22,13 +22,6 @@ button {
     margin: 10px 0;
 }
 
-div.container {
-    margin-bottom: 10px;
-    border: 1px solid black;
-    height: 100%;
-    aspect-ratio: 1;
-}
-
 div.squares {
     margin-bottom: 10px;
     border: 1px solid black;
