@@ -1,22 +1,30 @@
 // Create Grid of N Size
 const createGridOfNSize = (noOfSquares) => {
     // Get Parent Container
-    const squareContainer = document.querySelector('div.squares');
+    const gridContainer = document.querySelector('div.squares');
 
     // Remove Grid
-    while (squareContainer.firstChild) {
-        squareContainer.removeChild(squareContainer.firstChild);
+    while (gridContainer.firstChild) {
+        gridContainer.removeChild(gridContainer.firstChild);
     }
 
     // Create Grid inside Parent
-    for (let col = 0; col < noOfSquares; col++) {
-        for (let row = 0; row < noOfSquares; row++) {
-            const newSquare = document.createElement('div');
-            newSquare.classList.add('square');
-            newSquare.style["min-width"] = `${100/noOfSquares}%`;
-            newSquare.style.setProperty('--div-hover-background', `rgb(${(Math.random() * 255) + 1}, ${(Math.random() * 255) + 1}, ${(Math.random() * 255) + 1})`);
-            squareContainer.appendChild(newSquare);
-        }
+    for (let squareNum = 0; squareNum < noOfSquares ** 2; squareNum++) {
+        const newSquare = document.createElement('div');
+
+        newSquare.id = squareNum;
+        newSquare.addEventListener('mouseenter', (e) => {
+            let opacity = (e.target.style.opacity * 100 || 10) + 10;
+            e.target.style.opacity = `${opacity}%`;
+        })
+        
+        newSquare.classList.add('square');
+        newSquare.style["min-width"] = `${100/noOfSquares}%`;
+        
+        // Add Random color by altering Random RGB values
+        newSquare.style.setProperty('--div-hover-background', `rgb(${(Math.random() * 255) + 1}, ${(Math.random() * 255) + 1}, ${(Math.random() * 255) + 1})`);
+        
+        gridContainer.appendChild(newSquare);
     }
 }
 
@@ -31,5 +39,9 @@ const onClickGetUserInputAndCreateGrid = () => {
     while (!(Math.round(noOfSquares) === noOfSquares && noOfSquares > 0 && noOfSquares <= 100))
 
     createGridOfNSize(noOfSquares);
-    
 }
+
+// const gridContainer = document.querySelector('div.square');
+// gridContainer.addEventListener('mouseleave', (e) => {
+//     console.log('Vale: ',e.target.id);
+// })

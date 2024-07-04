@@ -13,7 +13,6 @@ html, body, div.squares {
 }
 
 body {
-    background-color: cornsilk;
     font-family: monospace;
 }
 
@@ -32,11 +31,12 @@ div.squares {
 }
 
 div.square {
-    background-color: white;
+    border: 2px solid #000;
+    opacity: 10%;
 }
 
 div.squares, div.square {
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 1);
 }
 
 div.square:hover {
