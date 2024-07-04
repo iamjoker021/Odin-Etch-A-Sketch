@@ -40,7 +40,7 @@ div.squares, div.square {
 }
 
 div.square:hover {
-    background-color: burlywood;
+    background: var(--div-hover-background, blueviolet);
 }
 
 /**** Flex ****/

@@ -14,6 +14,7 @@ const createGridOfNSize = (noOfSquares) => {
             const newSquare = document.createElement('div');
             newSquare.classList.add('square');
             newSquare.style["min-width"] = `${100/noOfSquares}%`;
+            newSquare.style.setProperty('--div-hover-background', `rgb(${(Math.random() * 255) + 1}, ${(Math.random() * 255) + 1}, ${(Math.random() * 255) + 1})`);
             squareContainer.appendChild(newSquare);
         }
     }
