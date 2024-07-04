@@ -4,8 +4,10 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* To occupy full space vertically */
 html, body, div.squares {
     height: 100%;
 }
@@ -22,16 +24,36 @@ button {
     margin: 10px 0;
 }
 
+/* To create a DIV square to contain grids */
 div.squares {
     margin-bottom: 10px;
-    border: 1px solid black;
     height: 100%;
     aspect-ratio: 1;
 }
 
+div.square {
+    background-color: white;
+}
+
+div.squares, div.square {
+    border: 1px solid black;
+}
+
 /**** Flex ****/
+
+/* Flex Body vertical */
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* Flex Grid */
+div.squares {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.square {
+    flex: 1 0 auto;
 }
