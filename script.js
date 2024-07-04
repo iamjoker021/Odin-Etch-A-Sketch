@@ -4,9 +4,8 @@ const createGridOfNSize = (noOfSquares) => {
     const squareContainer = document.querySelector('div.squares');
 
     // Remove Grid
-    const grids = squareContainer.children;
-    for (const square of grids) {
-        squareContainer.removeChild(square);
+    while (squareContainer.firstChild) {
+        squareContainer.removeChild(squareContainer.firstChild);
     }
 
     // Create Grid inside Parent
@@ -23,3 +22,13 @@ const createGridOfNSize = (noOfSquares) => {
 // Create Intial Grid
 let noOfSquares = 16;
 createGridOfNSize(16);
+
+const onClickGetUserInputAndCreateGrid = () => {
+    do {
+        noOfSquares = parseFloat(prompt('Enter Size of Grid(Integer from 1 to 100): '));
+    }
+    while (!(Math.round(noOfSquares) === noOfSquares && noOfSquares > 0 && noOfSquares <= 100))
+
+    createGridOfNSize(noOfSquares);
+    
+}
